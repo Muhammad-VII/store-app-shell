@@ -1,12 +1,13 @@
 import { loadRemoteModule } from '@angular-architects/native-federation';
-import { Injectable, Injector } from '@angular/core';
+import { Injectable, Injector, QueryList, ViewContainerRef } from '@angular/core';
+import { DynamicComponentDirective } from '../../directives/dynamic-component.directive';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DynamicComponentsLoadService {
   async loadComponent(
-    dynamicHosts: any,
+    dynamicHosts: QueryList<DynamicComponentDirective>,
     componentsToLoad: any[],
     injector: Injector,
     data: any
@@ -29,10 +30,9 @@ export class DynamicComponentsLoadService {
       const componentRef = viewContainerRef.createComponent(remoteComponent, {
         injector,
       });
-      componentRef.instance.dataFromHost = data;
+      (componentRef.instance as any).dataFromHost = data;
     }
   }
-
   async loadRemoteSafely(remoteName: string, exposedModule: string) {
     try {
       const module = await loadRemoteModule({

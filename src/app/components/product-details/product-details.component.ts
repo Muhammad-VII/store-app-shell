@@ -11,13 +11,12 @@ import { RouterOutlet } from '@angular/router';
 import { DynamicComponentDirective } from '../../directives/dynamic-component.directive';
 import { DynamicComponentsLoadService } from '../../services/dynamic-component-loading/dynamic-components-load.service';
 import { EventBusService } from '../../services/event-bus/event-bus.service';
-import { ToasterComponent } from '../toaster/toaster.component';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [RouterOutlet, DynamicComponentDirective, ToasterComponent],
+  imports: [RouterOutlet, DynamicComponentDirective],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss',
 })
