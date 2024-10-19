@@ -1,4 +1,4 @@
 {
-  "green-team": "http://localhost:4400/remoteEntry.json",
-  "blue-team": "http://localhost:4300/remoteEntry.json"
+  "green-team": "https://store-app-green-team.vercel.app/remoteEntry.json",
+  "blue-team": "https://store-app-blue-team.vercel.app/remoteEntry.json"
 }
