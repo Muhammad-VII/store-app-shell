@@ -1,0 +1,4 @@
+{
+  "green-team": "http://localhost:4400/remoteEntry.json",
+  "blue-team": "http://localhost:4300/remoteEntry.json"
+}
